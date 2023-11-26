@@ -6,6 +6,7 @@ University info of Japan [uij-data.eju-express.com](https://uij-data.eju-express
 
 [https://www.mext.go.jp/a_menu/koutou/ichiran/mext_01853.html](https://www.mext.go.jp/a_menu/koutou/ichiran/mext_01853.html)
 
+
 # 注意事項
 
 データの著作権は文部省に帰属します。
