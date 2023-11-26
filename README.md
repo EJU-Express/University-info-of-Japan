@@ -1,10 +1,10 @@
 # University-info-of-Japan
 University info of Japan [uij-data.eju-express.com](https://uij-data.eju-express.com/). Data from mext.go.jp.
 
-
-
 大学・短期大学・高等専門学校・法人一覧
+
 [https://www.mext.go.jp/a_menu/koutou/ichiran/mext_01853.html](https://www.mext.go.jp/a_menu/koutou/ichiran/mext_01853.html)
+
 
 # 注意事項
 
