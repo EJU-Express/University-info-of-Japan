@@ -2,23 +2,22 @@
 
 University info of Japan [uij-data.eju-express.com](https://uij-data.eju-express.com/). Data from mext.go.jp.
 
-大学・短期大学・高等専門学校・法人一覧
+Github: https://github.com/EJU-Express/University-info-of-Japan
 
-[https://www.mext.go.jp/a_menu/koutou/ichiran/mext_01853.html](https://www.mext.go.jp/a_menu/koutou/ichiran/mext_01853.html)
-
+Data Source: [文部省 - 大学・短期大学・高等専門学校・法人一覧](https://www.mext.go.jp/a_menu/koutou/ichiran/mext_01853.html)
 
 # 注意事項
 
 データの著作権は文部省に帰属します。
 データ整理作業の結果は、本プロジェクトの開発者に帰属します。
 
-こちらのJSONはMITライセンスに従って自由に使えますが、文部省データの利用について、文部省までお問合せください。
+整理作業の結果のJSONはMITライセンスに従って自由に使えますが、文部省データの利用について、文部省までお問合せください。
 
 ------
 
-**令和四年データ**使用
+**令和四年データ　使用**
 
-**大学のみ**含みます。
+**大学のみ**含みます
 
 短期大学・高等専門学校はありません。
 添加の予定がありますが、調子が良い時に整理します（基本的によくない）。
@@ -30,19 +29,21 @@ University info of Japan [uij-data.eju-express.com](https://uij-data.eju-express
 
 # 利用方法
 
-クローンして利用するか、GitPageの静的なファイルにも直接アクセスできます。
+クローンして利用するか、GitPageに直接アクセスもできます。
 
-[ダウンロード](https://codeload.github.com/EJU-Express/University-info-of-Japan/zip/refs/heads/master) | Gitpage
+[ダウンロード](https://codeload.github.com/EJU-Express/University-info-of-Japan/zip/refs/heads/master) |
+[GitPage](https://uij-data.eju-express.com/university/datas/r4-university-info.json)
 
-* ① [./university/mext_original](university/mext_original) 文部省のExcelから転換されたままのJSONデータ
-* ② [./university/datas](university/datas) ①に基づいて整理したJSONデータ
+| 番号 | リンク                                                    | 説明                            |
+|----|--------------------------------------------------------|-------------------------------|
+| ①  | [./university/mext_original](university/mext_original) | 文部省のExcelから転換されたままのJSONデータ    |
+| ②  | [./university/datas](university/datas)                 | ①に基づいて整理したJSONデータ (**おすすめ**)　 |
 
-②について、文部省のExcelから転換されたままのJSONと、それを基づいて整理したJSONの二種類あります。
-特にMongodbとの調子がいいと思いますが、もちろんわかりやすい構造で、Webなどの使用は問題ありません。
+②について、Mongodbの使用を想定して作りましたが、わかりやすい構造なのでWebなどの使用はもちろん問題ありません。
 
 他のフォーマットに変換したい場合はChatGPTに任せてください。
 
-## サンプル
+#### ②のサンプル
 
 ```json
 [
