@@ -77,7 +77,7 @@ def data_format(d, uni_type):
             'major': row[1],
             'pref': row[2],
             'city': row[3],
-            'day-night': day_night
+            'day_night': day_night
         })
 
     # ＝＝＝　共同実施制度利用（学部）　＝＝＝
