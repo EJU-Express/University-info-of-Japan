@@ -67,6 +67,10 @@ def data_format(d, uni_type):
         if len(row) < 4:
             row.extend([None] * (4 - len(row)))
 
+        # Delete ["入学定員", "修業年限", "入学定員", "修業年限", "入学定員", "修業年限", "入学定員", "修業年限"]
+        if row[0] == "入学定員":
+            continue
+
         if row[4] is not None and isinstance(row[4], str) and any(char in ["昼", "夜"] for char in row[4]):
             day_night = row[4]
         else:
