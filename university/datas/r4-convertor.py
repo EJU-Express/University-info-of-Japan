@@ -135,6 +135,36 @@ def data_format(d, uni_type):
             'tel': row[3],
         })
 
+    # ＝＝＝　学部沿革　＝＝＝
+    history_F_list = []
+    history_F_tb = d_table('学部沿革')
+    history_F_cols = history_F_tb["cols"]
+    history_F_rows = history_F_tb["rows"]
+
+    for row in history_F_rows:
+        if len(row) < 2:
+            row.extend([None] * (2 - len(row)))
+
+        history_F_list.append({
+            'date': row[0],
+            'detail': row[1],
+        })
+
+    # ＝＝＝　大学院沿革　＝＝＝
+    history_G_list = []
+    history_G_tb = d_table('大学院沿革')
+    history_G_cols = history_G_tb["cols"]
+    history_G_rows = history_G_tb["rows"]
+
+    for row in history_G_rows:
+        if len(row) < 2:
+            row.extend([None] * (2 - len(row)))
+
+        history_G_list.append({
+            'date': row[0],
+            'detail': row[1],
+        })
+
     return {
         "name": d['name'].replace(" ", "　"),
         "name_eng": d['name_eng'].replace("　", ""),
@@ -189,30 +219,16 @@ def data_format(d, uni_type):
         #     ]
         # },
         #
-        # "History-F": {
-        #     "name": "学部沿革",
-        #     "rows": [
-        #         {
-        #             "年月": "明治9年8月",
-        #             "沿革": "札幌農学校開校"
-        #         },
-        #         {
-        #             "年月": "明治40年9月",
-        #             "沿革": "東北帝国大学農科大学設置"
-        #         },
-        #     ]
-        # },
-        #
-        # "History-G": {
-        #     "name": "大学院沿革",
-        #     "rows": [
-        #         {
-        #             "年月": "昭和28年4月",
-        #             "沿革": "※専攻名の後に括弧書きのない専攻は（修・博）、以下同様\n北海道大学大学院（文学研究科（哲学専攻、東洋哲学専攻、心理学専攻、社会学専攻（修）、史学専攻、英米文学専攻、国文学専攻）、教育学研究科（教育学専攻、教育制度専攻）、法学研究科（民事法専攻（修））、経済学研究科（経済政策専攻（修））、理学研究科（数学専攻、物理学専攻、化学専攻、地質学鉱物学専攻、植物学専攻、動物学専攻）、工学研究科（土木工学専攻、鉱山工学専攻、機械工学専攻（修）、電気工学専攻、応用化学専攻、冶金工学専攻、建築工学専攻）、農学研究科（農学専攻、農業経済学専攻、農業生物学専攻、農芸化学専攻、畜産学専攻、農業工学専攻、林学専攻、林産学専攻）、獣医学研究科（予防治療学専攻、形態機能学専攻）、水産学研究科（水産学専攻））設置"
-        #         }
-        #     ]
-        # },
-        #
+        "History-F": {
+            "name": "学部沿革",
+            "rows": history_F_list
+        },
+
+        "History-G": {
+            "name": "大学院沿革",
+            "rows": history_G_list
+        },
+
         "campus": {
             "name": "学部・研究科所在地（キャンパス名など）",
             "rows": campus_list,
