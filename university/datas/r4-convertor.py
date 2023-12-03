@@ -230,4 +230,4 @@ if __name__ == '__main__':
             unis.append(data_format(uni, file[1]))
 
     with open('./r4-university-info.json', 'w', encoding='utf-8') as s:
-        s.write(json.dumps(unis, ensure_ascii=False))
+        json.dump(unis, s, ensure_ascii=False)
