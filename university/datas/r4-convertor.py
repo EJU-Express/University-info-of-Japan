@@ -114,8 +114,25 @@ def data_format(d, uni_type):
             'master': row[1],
         })
 
+    # ＝＝＝　学部・研究科所在地（キャンパス名など）　＝＝＝
+    campus_list = []
+    campus_tb = d_table('学部・研究科所在地（キャンパス名など）')
+    campus_cols = campus_tb["cols"]
+    campus_rows = campus_tb["rows"]
+
+    for row in campus_rows:
+        if len(row) < 4:
+            row.extend([None] * (4 - len(row)))
+
+        campus_list.append({
+            'name': row[0],
+            'post': row[1],
+            'addr': row[2],
+            'tel': row[3],
+        })
+
     return {
-        "name": d['name'],
+        "name": d['name'].replace(" ", "　"),
         "name_eng": d['name_eng'].replace("　", ""),
         "type": uni_type,
 
@@ -192,17 +209,11 @@ def data_format(d, uni_type):
         #     ]
         # },
         #
-        # "campus": {
-        #     "name": "学部・研究科所在地（キャンパス名など）",
-        #     "rows": [
-        #         {
-        #             "名称": "法学研究科・法学部",
-        #             "所在地": "〒060－0809 北海道札幌市北区北9条西7丁目",
-        #             "電話番号": "011－716－2111"
-        #         },
-        #     ],
-        #
-        # },
+        "campus": {
+            "name": "学部・研究科所在地（キャンパス名など）",
+            "rows": campus_list,
+
+        },
     }
 
 
